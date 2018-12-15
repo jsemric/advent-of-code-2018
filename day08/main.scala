@@ -36,7 +36,7 @@ object Advent8 {
     def main(args: Array[String]): Unit = {
         val line = StdIn.readLine().split(' ').map(_.toInt).toList
         val tree = makeTree(line)
-        println(tree.sum)
-        println(tree.rootNumber)
+        println(s"First answer: ${tree.sum}")
+        println(s"Second answer: ${tree.rootNumber}")
     }
 }
