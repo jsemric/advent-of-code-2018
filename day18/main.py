@@ -26,7 +26,6 @@ def next_minute(l,x,y):
                 s[i][j] = '.'
         else:
             raise RuntimeError("invalid cell")
-    # l = s
     return s
 
 def main():
@@ -36,13 +35,18 @@ def main():
     y = len(l[0])
     l = [['_']*y] + l + [['_']*y]
     x = len(l)
+
+    n = 5000
+    '''
+    To get the answer to the second part. Print first 5000 minutes and find when 
+    it starts repeating.
+    '''
     n = 10
     for k in range(n):
         l = next_minute(l,x,y)
-    
-    lumberyards = sum(1 for i in l for j in i if j == '#')
-    wood = sum(1 for i in l for j in i if j == '|')
-    print(lumberyards * wood)
+        lumberyards = sum(1 for i in l for j in i if j == '#')
+        wood = sum(1 for i in l for j in i if j == '|')
+        print(k+1,lumberyards * wood)
 
 
 if __name__ == '__main__':
